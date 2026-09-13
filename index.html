@@ -36,12 +36,20 @@
         <p>Scroll sideways through the moments that shaped Intel's sustainability story.</p>
       </div>
 
-      <div class="timeline" aria-label="Intel sustainability timeline">
+      <div class="timeline-controls" aria-label="Timeline controls">
+        <button class="timeline-button" id="timeline-back" type="button" aria-label="Show previous milestones">&#8592;</button>
+        <span>Drag or use the arrows to explore</span>
+        <button class="timeline-button" id="timeline-forward" type="button" aria-label="Show next milestones">&#8594;</button>
+      </div>
+
+      <div class="timeline-viewport">
+        <div class="timeline" aria-label="Intel sustainability timeline">
 
     <!-- Card 1: 1968 -->
     <article class="milestone-card" tabindex="0">
       <div class="card-image">
         <img src="img/1.jpg" alt="Early technology equipment" />
+        </div>
       </div>
       <div class="card-content">
       <p class="year">1968</p>
@@ -172,6 +180,7 @@
       </div>
     </article>
       </div>
+      </div>
     </section>
   </main>
   <p class="scroll-note">Scroll to view timeline <span aria-hidden="true">&#8594;</span> Hover over cards to learn more</p>
@@ -179,9 +188,20 @@
   <script>
     // On wide screens, a mouse wheel moves the timeline from left to right.
     const timeline = document.querySelector('.timeline');
+    const backButton = document.querySelector('#timeline-back');
+    const forwardButton = document.querySelector('#timeline-forward');
+    const scrollAmount = 340;
+
+    backButton.addEventListener('click', () => {
+      timeline.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    forwardButton.addEventListener('click', () => {
+      timeline.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
 
     timeline.addEventListener('wheel', (event) => {
-      if (window.innerWidth > 760 && Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+      if (window.innerWidth > 760 && event.deltaY !== 0) {
         event.preventDefault();
         timeline.scrollLeft += event.deltaY;
       }

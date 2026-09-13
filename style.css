@@ -93,10 +93,48 @@ h1 {
 }
 
 /* Flexbox keeps the milestones in one horizontal line on larger screens. */
+.timeline-controls {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 12px;
+	padding: 0 8% 12px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	font-weight: bold;
+}
+
+.timeline-button {
+	width: 42px;
+	height: 42px;
+	border: 1px solid var(--intel-blue);
+	border-radius: 50%;
+	color: var(--white);
+	background: var(--intel-blue);
+	cursor: pointer;
+	font-size: 1.3rem;
+	line-height: 1;
+}
+
+.timeline-button:hover,
+.timeline-button:focus-visible {
+	background: var(--deep-blue);
+	box-shadow: 0 0 0 3px #bde7ff;
+	outline: none;
+}
+
+.timeline-viewport {
+	width: 100%;
+	overflow: hidden;
+}
+
 .timeline {
 	position: relative;
 	display: flex;
+	flex-wrap: nowrap;
 	gap: 26px;
+	width: max-content;
+	min-width: 100%;
 	overflow-x: auto;
 	padding: 34px 8% 48px;
 	scroll-snap-type: x mandatory;
@@ -245,7 +283,7 @@ h1 {
 	}
 
 	.section-heading,
-	.timeline,
+	.timeline-controls,
 	.scroll-note {
 		padding-right: 7%;
 		padding-left: 7%;
@@ -256,8 +294,18 @@ h1 {
 		position: static;
 		flex-wrap: wrap;
 		gap: 24px;
+		width: 100%;
+		min-width: 0;
 		overflow-x: visible;
 		padding-top: 20px;
+	}
+
+	.timeline-controls {
+		justify-content: space-between;
+	}
+
+	.timeline-controls span {
+		font-size: 0.75rem;
 	}
 
 	.timeline::before,
