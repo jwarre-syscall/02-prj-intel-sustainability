@@ -96,9 +96,9 @@ h1 {
 .timeline-controls {
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
-	gap: 12px;
-	padding: 0 8% 12px;
+	justify-content: center;
+	gap: 14px;
+	padding: 0 8% 26px;
 	color: var(--muted);
 	font-size: 0.85rem;
 	font-weight: bold;
@@ -229,7 +229,7 @@ h1 {
 }
 
 .card-image {
-	height: 145px;
+	height: 174px;
 	overflow: hidden;
 	border-radius: 4px 4px 0 0;
 }
@@ -332,7 +332,8 @@ h1 {
 	}
 
 	.timeline-controls {
-		justify-content: space-between;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	.timeline-controls span {
