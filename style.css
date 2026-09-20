@@ -368,3 +368,68 @@ h1 {
 		transform: none;
 	}
 }
+
+
+/* Bootstrap additions: accessible cards, form, accordion, and footer. */
+.btn-primary {
+	--bs-btn-bg: #0068b5;
+	--bs-btn-border-color: #0068b5;
+	--bs-btn-hover-bg: #003c71;
+	--bs-btn-hover-border-color: #003c71;
+	--bs-btn-active-bg: #002b55;
+	--bs-btn-active-border-color: #002b55;
+}
+
+.text-primary {
+	color: #005a9c !important;
+}
+
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-check-input:focus-visible,
+.accordion-button:focus-visible,
+.site-footer .nav-link:focus-visible {
+	outline: 3px solid #fdb813;
+	outline-offset: 3px;
+	box-shadow: none;
+}
+
+.newsletter-section {
+	color: var(--ink);
+	background: var(--sky);
+}
+
+.newsletter-panel {
+	border: 1px solid var(--line);
+	background: var(--white);
+	box-shadow: 0 12px 28px rgba(0, 60, 113, 0.12);
+}
+
+.form-text {
+	color: #4b657d;
+}
+
+#subscription-status {
+	min-height: 1.5rem;
+	color: #005a45;
+}
+
+.accordion-button:not(.collapsed) {
+	color: var(--deep-blue);
+	background: var(--sky);
+}
+
+.site-footer {
+	color: var(--white);
+	background: var(--deep-blue);
+}
+
+.site-footer .nav-link {
+	color: var(--white);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.site-footer .nav-link:hover {
+	color: #bde7ff;
+}
